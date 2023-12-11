@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "@opentelemetry/auto-instrumentations-node": "^0.40.2",
+    "@opentelemetry/exporter-trace-otlp-http": "^0.45.1",
+    "@opentelemetry/sdk-node": "^0.45.1",
+    "consul": "^1.2.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  }
+}
