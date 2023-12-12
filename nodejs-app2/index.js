@@ -52,13 +52,15 @@ consulClient.kv.set(SERVICE_NAME, JSON.stringify(kvValue), function (err, result
 
 });
 
-let key;
-(async() => {
-    key = await consulClient.kv.get(SERVICE_NAME, function (err, result) {
-        if (err) throw err;
-    });
-})()
 
+let key ;
+setInterval(function () {
+    (async() => {
+        key = await consulClient.kv.get(SERVICE_NAME, function (err, result) {
+            if (err) throw err;
+        });
+    })()
+}, 5000)
 
 let servs;
 (async() => {

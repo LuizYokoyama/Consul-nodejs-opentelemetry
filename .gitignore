@@ -36,3 +36,4 @@ build/
 /data
 
 /clickhouse-setup/data
+/clickhouse-setup/data/

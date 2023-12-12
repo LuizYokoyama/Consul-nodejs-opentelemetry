@@ -58,12 +58,16 @@ let servs;
     servs = await consulClient.agent.service.list();
 })()
 
-let key;
-(async() => {
-    key = await consulClient.kv.get(SERVICE_NAME, function (err, result) {
-        if (err) throw err;
-    });
-})()
+let key ;
+setInterval(function () {
+    (async() => {
+        key = await consulClient.kv.get(SERVICE_NAME, function (err, result) {
+            if (err) throw err;
+        });
+    })()
+}, 5000)
+
+
 
 
 app.use(cors());
